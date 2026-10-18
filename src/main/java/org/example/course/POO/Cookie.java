@@ -35,22 +35,21 @@ package org.example.course.POO;
     *  1. Acelerar
     *  2. Frenar.
     *  3. Reversa.
-    *   
-    *   
-    *       
-    * 
-    * 
-    * 
-    * 
+    *  */
+
+    /*
+    * Encapsulación:
+    * 1. Protege los datos evitando cambios accidentales o no controlados
+    * 2. Mejora la seguridad
     *  */
 
 public class Cookie {
     //* Variables de nuestras propiedades
     //* Una forma para que nuestras variables no se usen en otras clases 
     // * solo en cookie es usando private
-    private  String shape;
-    private  String flavor;
-    private  int weight;
+    private String shape;
+    private String flavor;
+    private int weight;
     private String company;
     /* 
      * Añadimos nuestro constructor, debe ser publico debe tener acceso a el en todo momento
@@ -77,7 +76,35 @@ public class Cookie {
         System.out.println("company = " + company);
     }
 
-    public void changeFlavor(String newFlavor){
+    //* Creando un getter */
+    /* 
+    *  Es un método que devuelve el valor de un atributo privado. Su nombre suele empezar con get
+    *  Puedes indicar antes de usar que tipo de dato se va a retornar
+    *  Es un método que devuelve el valor de un atributo privado. Su nombre suele empezar con get. 
+    *  y tiene que coincidir */
+    public String getShape(){
+        return this.shape;
+    }
+
+    public String getFlavor(){
+        return this.flavor;
+
+    }
+
+    public int getWeight(){
+        return this.weight;
+    }
+
+    //* Es un método que asigna o modifica el valor de un atributo privado. Su nombre suele empezar con set.*/
+    public void setFlavor(String newFlavor){
         this.flavor = newFlavor;
+    }
+
+    public void setWeight (int newWeight){
+        if(newWeight < 2){
+            System.out.println("Valor proporcionado debe ser mínimo 2");
+        }else{
+            this.weight = newWeight;
+        }
     }
 }
